@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Taverne</title>
+  <link rel="stylesheet" href="css/style1.css">
+  <link rel="shortcut icon" href="image/icone.jpg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="parallax">
+
+  <section>
+    <div class="overlay">
+      <h1>Bienvenue dans notre taverne !</h1>
+    </div>
+  </section>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="races.html">Choisir sa race</a></li>
+      <li><a href="classes.html">Choisir sa classes</a></li>
+    </ul>
+  </nav>
+
+  <h1>Création de votre race </h1>
+
+  <form id="raceForm">
+    <!-- Question 1 -->
+    <fieldset>
+      <legend>1. Votre préférence physique :</legend>
+      <label><input type="radio" name="physique" value="humain"> Humain</label><br>
+      <label><input type="radio" name="physique" value="feerique"> Féerique</label><br>
+      <label><input type="radio" name="physique" value="exotique"> Exotique</label>
+    </fieldset>
+
+    <!-- Question 2 -->
+    <fieldset>
+      <legend>2. Façon de combattre :</legend>
+      <label><input type="radio" name="combat" value="corps"> Corps à corps</label><br>
+      <label><input type="radio" name="combat" value="ruse"> Ruse</label><br>
+      <label><input type="radio" name="combat" value="magie"> Magie</label><br>
+      <label><input type="radio" name="combat" value="distance"> Distance</label>
+    </fieldset>
+
+    <!-- Question 3 -->
+    <fieldset>
+      <legend>3. Taille :</legend>
+      <label><input type="radio" name="taille" value="grand"> Grand</label><br>
+      <label><input type="radio" name="taille" value="moyen"> Moyen</label><br>
+      <label><input type="radio" name="taille" value="petit"> Petit</label><br>
+      <label><input type="radio" name="taille" value="trespetit"> Très petit</label>
+    </fieldset>
+
+    <!-- Question 4 -->
+    <fieldset>
+      <legend>4. Mettre en avant :</legend>
+      <label><input type="radio" name="style" value="polyvalence"> Polyvalence</label><br>
+      <label><input type="radio" name="style" value="specialisation"> Spécialisation</label>
+    </fieldset>
+
+    <!-- Question 5 -->
+    
+
+    <button type="submit">⚔️ Envoyer ⚔️</button>
+  </form>
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <h2>Attention !</h2>
+    <p id="popup-message"></p>
+    <button id="closePopup">Ok, désolé j'y retourne</button>
+  </div>
+</div>
+
+  <!-- script placé en bas + defer -->
+  <script src="js/script.js" defer></script>
+</body>
+</html>
