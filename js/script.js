@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("JS chargé ✅");
 
   const form = document.getElementById("raceForm");
-  const errorBox = document.getElementById("error");
 
   const races = {
     dragonborn: { expected: ["exotique","corps","grand","specialisation",], page: "race-dragonborn.html" },
@@ -38,24 +37,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const questionNames = ["physique","combat","taille","style",];
     if (answers.includes(null)) {
       const missing = questionNames.filter((_, i) => !answers[i]);
-      const msg = "Merci de répondre à toutes les questions : " + missing.join(", ");
+      const msg = `Merci de répondre à toutes les questions : ${missing.join(", ")}`;
       const popup = document.getElementById("popup");
 const popupMessage = document.getElementById("popup-message");
 const closeBtn = document.getElementById("closePopup");
 
-popupMessage.textContent = msg;
-popup.style.display = "flex";
+      popupMessage.textContent = msg;
+      popup.classList.add("active");
 
-closeBtn.onclick = () => {
-  popup.style.display = "none";
-};
+      closeBtn.onclick = () => {
+        popup.classList.remove("active");
+      };
       return;
     }
 
     let bestMatch = null;
     let maxScore = -1;
 
-    for (const [race, info] of Object.entries(races)) {
+    for (const info of Object.values(races)) {
       let score = 0;
       info.expected.forEach((exp, i) => {
         if (exp === answers[i]) score++;

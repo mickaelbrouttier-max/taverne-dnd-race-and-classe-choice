@@ -43,35 +43,38 @@ document.addEventListener("DOMContentLoaded", () => {
     // Vérifier si toutes les questions sont répondues
     if (answers.includes(null)) {
       const missing = questionNames.filter((_, i) => !answers[i]);
-      const msg =
-        "Merci de répondre à toutes les questions : " + missing.join(", ");
+      const msg = `Merci de répondre à toutes les questions : ${missing.join(", ")}`;
       const popup = document.getElementById("popup");
       const popupMessage = document.getElementById("popup-message");
       const closeBtn = document.getElementById("closePopup");
 
       popupMessage.textContent = msg;
-      popup.style.display = "flex";
-      closeBtn.onclick = () => (popup.style.display = "none");
+      popup.classList.add("active");
+      closeBtn.onclick = () => popup.classList.remove("active");
       return;
     }
 
     // --- Calcul des scores avec points bonus ---
     const scores = {};
-    Object.keys(classes).forEach((c) => (scores[c] = 0));
+    Object.keys(classes).forEach((c) => {
+      scores[c] = 0;
+    });
 
     answers.forEach((answer, i) => {
-      if (!answer) return;
+      if (!answer) {
+        return;
+      }
 
       const selectedInput = document.querySelector(
         `input[name="${questionNames[i]}"]:checked`
       );
       const points = selectedInput?.dataset.points
-        ? parseInt(selectedInput.dataset.points)
+        ? parseInt(selectedInput.dataset.points, 10)
         : 1;
 
       const possibles = answer.split(",").map((c) => c.trim().toLowerCase());
       possibles.forEach((classe) => {
-        if (scores.hasOwnProperty(classe)) {
+        if (Object.prototype.hasOwnProperty.call(scores, classe)) {
           scores[classe] += points; // Ajoute le bonus
         }
       });
@@ -95,10 +98,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const popup = document.getElementById("popup");
       const popupMessage = document.getElementById("popup-message");
       const closeBtn = document.getElementById("closePopup");
-      popupMessage.textContent =
-        "Aucune classe ne correspond clairement à vos réponses. Essayez d'autres réponses.";
-      popup.style.display = "flex";
-      closeBtn.onclick = () => (popup.style.display = "none");
+      popupMessage.textContent = "Aucune classe ne correspond clairement à vos réponses. Essayez d'autres réponses.";
+      popup.classList.add("active");
+      closeBtn.onclick = () => popup.classList.remove("active");
       return;
     }
 

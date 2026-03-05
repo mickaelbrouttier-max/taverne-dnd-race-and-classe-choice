@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>La Taverne</title>
   <link rel="shortcut icon" href="image/icone.jpg">
-  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Uncial+Antiqua&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -21,103 +23,101 @@
     <ul>
       <li><a href="index.html">Accueil</a></li>
       <li><a href="races.html">Choisir sa race</a></li>
-      <li><a href="classes.html">Choisir sa classes</a></li>
+      <li><a href="classes.html">Choisir sa classe</a></li>
     </ul>
   </nav>
 
-  <h1>Création de votre classe </h1>
+  <section class="content">
+    <h2>Création de votre classe</h2>
 
-  <form id="classes">
-    <!-- Question 1 -->
-  <fieldset>
-    <legend>1. En combat, tu préfères…</legend>
-    <label><input type="radio" name="combat" value="barbare,guerrier,paladin"> Charger en première ligne</label><br>
-    <label><input type="radio" name="combat" value="rodeur,roublard,moine"> Être agile et précis</label><br>
-    <label><input type="radio" name="combat" value="magicien,ensorceleur,sorcier"> Dominer avec des sorts</label><br>
-    <label><input type="radio" name="combat" value="clerc,barde,druide"> Soutenir et protéger</label><br>
-  </fieldset>
+    <form id="classes">
+      <!-- Question 1 -->
+      <fieldset>
+        <legend>1. En combat, tu préfères…</legend>
+        <div class="radio-group">
+          <label><input type="radio" name="combat" value="barbare,guerrier,paladin"> Charger en première ligne</label>
+          <label><input type="radio" name="combat" value="rodeur,roublard,moine"> Être agile et précis</label>
+          <label><input type="radio" name="combat" value="magicien,ensorceleur,sorcier"> Dominer avec des sorts</label>
+          <label><input type="radio" name="combat" value="clerc,barde,druide"> Soutenir et protéger</label>
+        </div>
+      </fieldset>
 
-  <!-- Question 2 -->
-  <fieldset>
-  <legend>2. Ta force principale ?</legend>
-  <label>
-    <input type="radio" name="force" value="barbare,guerrier,paladin" data-points="2">
-    Force brute
-  </label><br>
-  <label>
-    <input type="radio" name="force" value="roublard,rodeur" data-points="2">
-    Discrétion et ruse
-  </label><br>
-  <label>
-    <input type="radio" name="force" value="magicien,ensorceleur" data-points="2">
-    Intelligence / Savoir
-  </label><br>
-  <label>
-    <input type="radio" name="force" value="barde,clerc,druide,paladin" data-points="2">
-    Charisme / Foi
-  </label><br>
-</fieldset>
+      <!-- Question 2 -->
+      <fieldset>
+        <legend>2. Ta force principale ?</legend>
+        <div class="radio-group">
+          <label><input type="radio" name="force" value="barbare,guerrier,paladin" data-points="2"> Force brute</label>
+          <label><input type="radio" name="force" value="roublard,rodeur" data-points="2"> Discrétion et ruse</label>
+          <label><input type="radio" name="force" value="magicien,ensorceleur" data-points="2"> Intelligence /
+            Savoir</label>
+          <label><input type="radio" name="force" value="barde,clerc,druide,paladin" data-points="2"> Charisme /
+            Foi</label>
+        </div>
+      </fieldset>
 
-  <!-- Question 3 -->
-  <fieldset>
-    <legend>3. Face à un obstacle…</legend>
-    <label><input type="radio" name="obstacle" value="barbare,guerrier"> Je le détruis</label><br>
-    <label><input type="radio" name="obstacle" value="roublard,rodeur"> Je le contourne discrètement</label><br>
-    <label><input type="radio" name="obstacle" value="magicien,ensorceleur,sorcier"> Je l’analyse et trouve une solution magique</label><br>
-    <label><input type="radio" name="obstacle" value="clerc,druide,barde"> Je demande de l’aide aux alliés ou aux esprits</label><br>
-  </fieldset>
+      <!-- Question 3 -->
+      <fieldset>
+        <legend>3. Face à un obstacle…</legend>
+        <div class="radio-group">
+          <label><input type="radio" name="obstacle" value="barbare,guerrier"> Je le détruis</label>
+          <label><input type="radio" name="obstacle" value="roublard,rodeur"> Je le contourne discrètement</label>
+          <label><input type="radio" name="obstacle" value="magicien,ensorceleur,sorcier"> Je l’analyse et trouve une
+            solution magique</label>
+          <label><input type="radio" name="obstacle" value="clerc,druide,barde"> Je demande de l’aide aux alliés ou aux
+            esprits</label>
+        </div>
+      </fieldset>
 
-  <!-- Question 4 -->
-<fieldset>
-  <legend>4. Dans ton groupe idéal, tu es…</legend>
-  <label>
-    <input type="radio" name="groupe" value="paladin,guerrier,barbare" data-points="2">
-    Le tank protecteur
-  </label><br>
-  <label>
-    <input type="radio" name="groupe" value="roublard,rodeur,moine" data-points="2">
-    Le damage-dealer précis
-  </label><br>
-  <label>
-    <input type="radio" name="groupe" value="magicien,sorcier,ensorceleur" data-points="2">
-    Le stratège-magicien
-  </label><br>
-  <label>
-    <input type="radio" name="groupe" value="clerc,barde,druide" data-points="2">
-    Le soutien inspirant
-  </label><br>
-</fieldset>
+      <!-- Question 4 -->
+      <fieldset>
+        <legend>4. Dans ton groupe idéal, tu es…</legend>
+        <div class="radio-group">
+          <label><input type="radio" name="groupe" value="paladin,guerrier,barbare" data-points="2"> Le tank
+            protecteur</label>
+          <label><input type="radio" name="groupe" value="roublard,rodeur,moine" data-points="2"> Le damage-dealer
+            précis</label>
+          <label><input type="radio" name="groupe" value="magicien,sorcier,ensorceleur" data-points="2"> Le
+            stratège-magicien</label>
+          <label><input type="radio" name="groupe" value="clerc,barde,druide" data-points="2"> Le soutien
+            inspirant</label>
+        </div>
+      </fieldset>
 
-  <!-- Question 5 -->
-  <fieldset>
-    <legend>5. Ton rapport à la magie ?</legend>
-    <label><input type="radio" name="magie" value="guerrier,barbare,roublard"> Inutile</label><br>
-    <label><input type="radio" name="magie" value="magicien,clerc,paladin"> Discipline stricte</label><br>
-    <label><input type="radio" name="magie" value="sorcier,ensorceleur,druide"> Don inné / instinct</label><br>
-    <label><input type="radio" name="magie" value="barde"> Outil de charme / soutien</label><br>
-  </fieldset>
+      <!-- Question 5 -->
+      <fieldset>
+        <legend>5. Ton rapport à la magie ?</legend>
+        <div class="radio-group">
+          <label><input type="radio" name="magie" value="guerrier,barbare,roublard"> Inutile</label>
+          <label><input type="radio" name="magie" value="magicien,clerc,paladin"> Discipline stricte</label>
+          <label><input type="radio" name="magie" value="sorcier,ensorceleur,druide"> Don inné / instinct</label>
+          <label><input type="radio" name="magie" value="barde"> Outil de charme / soutien</label>
+        </div>
+      </fieldset>
 
-  <!-- Question 6 -->
-  <fieldset>
-    <legend>6. Ton idéal de vie ?</legend>
-    <label><input type="radio" name="ideal" value="barbare,rodeur,druide"> Liberté sauvage</label><br>
-    <label><input type="radio" name="ideal" value="paladin,clerc,guerrier"> Justice et honneur</label><br>
-    <label><input type="radio" name="ideal" value="magicien,sorcier,ensorceleur"> Puissance et savoir</label><br>
-    <label><input type="radio" name="ideal" value="barde,druide,moine"> Harmonie et relations</label><br>
-  </fieldset>
-    
+      <!-- Question 6 -->
+      <fieldset>
+        <legend>6. Ton IDÉAL de vie ?</legend>
+        <div class="radio-group">
+          <label><input type="radio" name="ideal" value="barbare,rodeur,druide"> Liberté sauvage</label>
+          <label><input type="radio" name="ideal" value="paladin,clerc,guerrier"> Justice et honneur</label>
+          <label><input type="radio" name="ideal" value="magicien,sorcier,ensorceleur"> Puissance et savoir</label>
+          <label><input type="radio" name="ideal" value="barde,druide,moine"> Harmonie et relations</label>
+        </div>
+      </fieldset>
 
-    <button type="submit"> Envoyer </button>
-  </form>
-<div id="popup" class="popup">
-  <div class="popup-content">
-    <h2>Attention !</h2>
-    <p id="popup-message"></p>
-    <button id="closePopup">Ok, désolé j'y retourne</button>
+      <button type="submit"> Révéler ma destinée </button>
+    </form>
+  </section>
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <h2>Attention !</h2>
+      <p id="popup-message"></p>
+      <button id="closePopup">Ok, désolé j'y retourne</button>
+    </div>
   </div>
-</div>
 
   <!-- script placé en bas + defer -->
   <script src="js/scriptclasse.js" defer></script>
 </body>
+
 </html>
