@@ -105,6 +105,31 @@
         </div>
       </fieldset>
 
+      <!-- Question 7 -->
+      <fieldset>
+        <legend>7. Ta plus grande peur ?</legend>
+        <div class="radio-group">
+          <label><input type="radio" name="peur" value="paladin,clerc,guerrier"> La trahison</label>
+          <label><input type="radio" name="peur" value="barbare,barde,roublard,moine"> La perte de liberté</label>
+          <label><input type="radio" name="peur" value="magicien,ensorceleur,sorcier"> L'ignorance et
+            l'impuissance</label>
+          <label><input type="radio" name="peur" value="druide,rodeur"> La destruction de la nature</label>
+        </div>
+      </fieldset>
+
+      <!-- Question 8 -->
+      <fieldset>
+        <legend>8. Ta récompense idéale après une quête ?</legend>
+        <div class="radio-group">
+          <label><input type="radio" name="recompense" value="magicien,sorcier,ensorceleur"> Un puissant artefact
+            magique</label>
+          <label><input type="radio" name="recompense" value="guerrier,barde,roublard,barbare"> La gloire et des
+            richesses</label>
+          <label><input type="radio" name="recompense" value="paladin,clerc"> Le sentiment du devoir accompli</label>
+          <label><input type="radio" name="recompense" value="druide,rodeur,moine"> La quiétude et l'harmonie</label>
+        </div>
+      </fieldset>
+
       <button type="submit"> Révéler ma destinée </button>
     </form>
   </section>
@@ -113,6 +138,18 @@
       <h2>Attention !</h2>
       <p id="popup-message"></p>
       <button id="closePopup">Ok, désolé j'y retourne</button>
+    </div>
+  </div>
+
+  <!-- Result Popup -->
+  <div id="resultPopup" class="popup">
+    <div class="popup-content result-content">
+      <h2 id="result-title" class="result-title">Ta Destinée</h2>
+      <p id="result-description" class="result-text"></p>
+      <div class="result-actions">
+        <a href="races.html" class="action-btn primary-btn">Et ma race alors ?</a>
+        <button id="closeResultPopup" class="action-btn secondary-btn">Refaire le test</button>
+      </div>
     </div>
   </div>
 

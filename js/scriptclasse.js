@@ -4,18 +4,54 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("classes");
 
   const classes = {
-    barbare: { page: "classe-barbare.html" },
-    guerrier: { page: "classe-guerrier.html" },
-    paladin: { page: "classe-paladin.html" },
-    rodeur: { page: "classe-rodeur.html" },
-    roublard: { page: "classe-roublard.html" },
-    moine: { page: "classe-moine.html" },
-    magicien: { page: "classe-magicien.html" },
-    ensorceleur: { page: "classe-ensorceleur.html" },
-    sorcier: { page: "classe-sorcier.html" },
-    clerc: { page: "classe-clerc.html" },
-    druide: { page: "classe-druide.html" },
-    barde: { page: "classe-barde.html" },
+    barbare: {
+      name: "Barbare",
+      description: "La rage bouillonne en vous. Vous êtes un combattant féroce, puisant dans une fureur primale pour écraser vos ennemis et endurer des coups qui terrasseraient de simples mortels."
+    },
+    guerrier: {
+      name: "Guerrier",
+      description: "Maître des armes et des armures. Que vous soyez un chevalier noble ou un mercenaire aguerri, votre expertise martiale et votre discipline au combat font de vous la pierre angulaire de tout groupe."
+    },
+    paladin: {
+      name: "Paladin",
+      description: "Guerrier sacré lié par un serment. Vous combinez prouesses martiales et magie divine pour soigner les innocents et châtier les forces des ténèbres au nom de la justice."
+    },
+    rodeur: {
+      name: "Rôdeur",
+      description: "Chasseur émérite et protecteur des terres sauvages. Vous traquez vos proies avec une précision mortelle, usant de ruse, de magie naturelle et de vos talents d'archer ou d'épéiste."
+    },
+    roublard: {
+      name: "Roublard",
+      description: "Spécialiste de la discrétion, de la ruse et des coups bas. Vous frappez dans l'ombre là où ça fait mal, et vous possédez un talent inné pour déjouer les pièges et forcer les serrures."
+    },
+    moine: {
+      name: "Moine",
+      description: "Maître des arts martiaux canalisant le Ki. Votre corps est votre arme, vous attaquez avec une vitesse fulgurante et possédez une discipline spirituelle qui vous rend insaisissable."
+    },
+    magicien: {
+      name: "Magicien",
+      description: "Erudit des arcanes. Par des années d'étude acharnée dans d'anciens grimoires, vous avez maîtrisé les lois de la réalité pour plier le feu, l'espace et le temps à votre volonté."
+    },
+    ensorceleur: {
+      name: "Ensorceleur",
+      description: "La magie coule dans vos veines. Contrairement à ceux qui l'étudient, la magie est pour vous un don inné, une force chaotique et puissante que vous libérez par pur instinct."
+    },
+    sorcier: {
+      name: "Sorcier",
+      description: "Vous avez scellé un pacte avec une entité d'un autre monde. En échange de votre allégeance, vous maniez des sortilèges occultes et mystérieux, tirant votre force d'impénétrables secrets."
+    },
+    clerc: {
+      name: "Clerc",
+      description: "Un champion sacerdotal maniant la magie divine. Porte-parole de votre divinité, vous avez le pouvoir de guérir les blessures mortelles et de déchaîner le courroux céleste sur les impies."
+    },
+    druide: {
+      name: "Druide",
+      description: "Prêtre de l'Ancienne Foi, protecteur de l'équilibre naturel. Vous commandez aux forces de la nature, manipulez les éléments et pouvez même revêtir la forme de redoutables bêtes sauvages."
+    },
+    barde: {
+      name: "Barde",
+      description: "Artiste dont la magie est tissée de paroles et de musique. Vous inspirez vos alliés, charmez vos ennemis, et possédez une connaissance encyclopédique qui fait de vous un atout inestimable en toutes circonstances."
+    },
   };
 
   const questionNames = [
@@ -25,6 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "groupe",
     "magie",
     "ideal",
+    "peur",
+    "recompense"
   ];
 
   function getSelectedValue(name) {
@@ -104,7 +142,23 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    console.log("Meilleur match :", bestClass, "->", classes[bestClass].page);
-    window.location.href = classes[bestClass].page;
+    console.log("Meilleur match :", bestClass, "->", classes[bestClass].name);
+
+    // Afficher la modale de résultat
+    const resultPopup = document.getElementById("resultPopup");
+    const resultTitle = document.getElementById("result-title");
+    const resultDesc = document.getElementById("result-description");
+    const closeResultBtn = document.getElementById("closeResultPopup");
+
+    resultTitle.textContent = "Tu es un(e) " + classes[bestClass].name;
+    resultDesc.textContent = classes[bestClass].description;
+    
+    resultPopup.classList.add("active");
+
+    closeResultBtn.onclick = () => {
+      resultPopup.classList.remove("active");
+      // Réinitialiser le formulaire
+      form.reset();
+    };
   });
 });

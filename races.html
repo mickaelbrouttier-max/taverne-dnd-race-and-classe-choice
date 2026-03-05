@@ -71,6 +71,27 @@
         </div>
       </fieldset>
 
+      <!-- Question 5 -->
+      <fieldset>
+        <legend>5. Ton domaine d'origine :</legend>
+        <div class="radio-group">
+          <label><input type="radio" name="origine" value="cite"> Grandes cités</label>
+          <label><input type="radio" name="origine" value="sauvage"> Contrées sauvages</label>
+          <label><input type="radio" name="origine" value="souterrain"> Profondeurs souterraines</label>
+          <label><input type="radio" name="origine" value="magique"> Confins magiques</label>
+        </div>
+      </fieldset>
+
+      <!-- Question 6 -->
+      <fieldset>
+        <legend>6. Comment es-tu perçu par les autres ?</legend>
+        <div class="radio-group">
+          <label><input type="radio" name="perception" value="fiable"> Fiable et amical</label>
+          <label><input type="radio" name="perception" value="enigmatique"> Énigmatique et distant</label>
+          <label><input type="radio" name="perception" value="intimidant"> Intimidant et redoutable</label>
+        </div>
+      </fieldset>
+
       <button type="submit"> Révéler ma lignée </button>
     </form>
   </section>
@@ -79,6 +100,18 @@
       <h2>Attention !</h2>
       <p id="popup-message"></p>
       <button id="closePopup">Ok, désolé j'y retourne</button>
+    </div>
+  </div>
+
+  <!-- Result Popup -->
+  <div id="resultPopup" class="popup">
+    <div class="popup-content result-content">
+      <h2 id="result-title" class="result-title">Ta Lignée</h2>
+      <p id="result-description" class="result-text"></p>
+      <div class="result-actions">
+        <a href="classes.html" class="action-btn primary-btn">Et ma classe alors ?</a>
+        <button id="closeResultPopup" class="action-btn secondary-btn">Refaire le test</button>
+      </div>
     </div>
   </div>
 
